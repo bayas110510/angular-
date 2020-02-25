@@ -16,7 +16,8 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
   ],
   exports: [
     FormsModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    CommonModule
   ],
   /** 配置 ng-zorro-antd 国际化（文案 及 日期） **/
   providers   : [
