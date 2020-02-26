@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
+import { WyUiModule } from './wy-ui/wy-ui.module';
 
 
 
@@ -13,11 +14,13 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
     FormsModule,
     /** 导入 ng-zorro-antd 模块 **/
     NgZorroAntdModule,
+    WyUiModule
   ],
   exports: [
     FormsModule,
     NgZorroAntdModule,
-    CommonModule
+    CommonModule,
+    WyUiModule,
   ],
   /** 配置 ng-zorro-antd 国际化（文案 及 日期） **/
   providers   : [
