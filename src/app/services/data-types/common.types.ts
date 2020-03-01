@@ -20,3 +20,13 @@ export type SongSheet = {
     playCount:number;
 
 }
+
+//注入歌手
+export type Singer = {
+    id:number;
+    name:string;
+    picUrl:string;
+    albumSize:number;
+
+}
+
