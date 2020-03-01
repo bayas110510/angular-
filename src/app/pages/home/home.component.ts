@@ -22,8 +22,8 @@ export class HomeComponent implements OnInit {
   @ViewChild(NzCarouselComponent, {static:true}) 
   private nzCarousel:NzCarouselComponent;
   constructor( 
-    private homeServe:HomeService,
-    private singServe:SingerService,
+    // private homeServe:HomeService,
+    // private singServe:SingerService,
     private route:ActivatedRoute 
     ) {
     
