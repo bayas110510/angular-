@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { HomeResolverService } from './home-resolve.service';
 
 
 const routes: Routes = [
@@ -9,12 +10,16 @@ const routes: Routes = [
     component:HomeComponent,
     data:{
       title:'首页'
+    },
+    resolve:{
+      homeData:HomeResolverService
     }
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[HomeResolverService]
 })
 export class HomeRoutingModule { }
