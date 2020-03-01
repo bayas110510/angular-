@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { HomeService } from 'src/app/services/home.service';
 import { Banner, HotTag, SongSheet,Singer } from 'src/app/services/data-types/common.types';
 import { NzCarouselComponent } from 'ng-zorro-antd';
-// import { SingerService } from 'src/app/services/singer.service' ;
+import { SingerService } from 'src/app/services/singer.service' ;
 
 @Component({
   selector: 'app-home',
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   private nzCarousel:NzCarouselComponent;
   constructor( 
     private homeServe:HomeService,
-    // private singServe:SingerService
+    private singServe:SingerService
     ) {
     
     // 调轮播图接口
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     this.getPersonalSheetList();
 
     //获取入住歌手
-    // this.getEnterSinger();
+    this.getEnterSinger();
   }
 
   ngOnInit() {
@@ -67,12 +67,12 @@ export class HomeComponent implements OnInit {
   }
   
   //获取入住歌手
-  // private getEnterSinger(){
-  //   this.singServe.getEnterSinger().subscribe( singers =>{
-  //     console.log('singer:', singers);
-  //     this.singers =singers;
-  //   });
-  // }
+  private getEnterSinger(){
+    this.singServe.getEnterSinger().subscribe( singers =>{
+      console.log('singer:', singers);
+      this.singers =singers;
+    });
+  }
 
   // 轮播图上的小圆点
   onBeforeChange({to}){

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/internal/operators';
 import { Singer } from './data-types/common.types';
-import { queryString } from 'query-string';
+import  queryString  from 'query-string';
 
 
 type SingerParams ={
@@ -32,7 +32,8 @@ export class SingerService {
     //获取注入歌手的方法 
     getEnterSinger(args: SingerParams = defaultParams):Observable<Singer[]>{
       const params = new HttpParams({ fromString: queryString.stringify(args) });
-      return this.http.get(this.uri + 'artists/list',{params}).pipe(map((res:{artists:Singer[]}) => res.artists));
+      return this.http.get(this.uri + 'artist/list',{params}).pipe(map((res:{artists:Singer[]}) => res.artists));
     }
 
 }
+
