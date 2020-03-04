@@ -4,6 +4,7 @@ import { Component, OnInit, TemplateRef, ViewChild, Input, Output,EventEmitter }
   templateUrl: './wyy-carousel.component.html',
   styleUrls: ['./wyy-carousel.component.less'],
 })
+
 export class WyyCarouselComponent implements OnInit {
 
   @Input() activeIndex = 0;

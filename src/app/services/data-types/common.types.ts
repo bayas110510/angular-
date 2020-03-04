@@ -12,14 +12,7 @@ export type HotTag = {
     position:number;
 }
 
-// 热门推荐歌单
-export type SongSheet = {
-    id:number;
-    name:string;
-    picUrl:string;
-    playCount:number;
 
-}
 
 //注入歌手
 export type Singer = {
@@ -30,3 +23,33 @@ export type Singer = {
 
 }
 
+//每一首歌曲的数据类型
+export type Song = {
+    id:number;
+    name:string;
+    url:string;
+    ar:Singer[]; //歌手的数组
+    al:{
+        id:number;
+        name:string;
+        picUrl:string;
+
+    };//al是这首哥专辑相关的内容
+    dt:number;
+}
+// 热门推荐歌单数据类型
+export type SongSheet = {
+    id:number;
+    name:string;
+    picUrl:string;
+    playCount:number;
+    tracks:Song[];
+
+}
+
+
+//播放地址
+export type SongUrl = {
+    id:number;
+    url:string;
+}
